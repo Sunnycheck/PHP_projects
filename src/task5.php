@@ -30,7 +30,7 @@ echo calculator0($inputNumber, $exponentValue).PHP_EOL;
 
 
 $_inputNumber = 3;
-$exponentValue = 3;
+
 function calculator1(int &$number, int $exponent): int
 {
       return $number = pow($number, $exponent);
