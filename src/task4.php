@@ -1,22 +1,22 @@
 <?php
 
-(int)$constValue1 = 1;
-(int)$constValue2 = 2;
-(int)$constValue3 = 3;
-(int)$constValue4 = 4;
-(int)$constValue5 = 5;
-(int)$constValue6 = 6;
+$constValue1 = 1;
+$constValue2 = 2;
+$constValue3 = 3;
+$constValue4 = 4;
+$constValue5 = 5;
+$constValue6 = 6;
 
-(string)$constColor1 = "green";
-(string)$constColor2 = "red";
-(string)$constColor3 = "blue";
-(string)$constColor4 = "brown";
-(string)$constColor5 = "violet";
-(string)$constColor6 = "black";
-(string)$constColor7 = "white";
+$constColor1 = "green";
+$constColor2 = "red";
+$constColor3 = "blue";
+$constColor4 = "brown";
+$constColor5 = "violet";
+$constColor6 = "black";
+$constColor7 = "white";
 
 
-(int)$value = "4";
+$value = "4";
 
 // if else
 if ($value == $constValue1) {
