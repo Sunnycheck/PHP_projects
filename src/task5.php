@@ -31,10 +31,10 @@ echo calculator0($inputNumber, $exponentValue).PHP_EOL;
 
 $_inputNumber = 3;
 
-function calculator1(int &$number, int $exponent): int
+function calculator1(int &$number, int $exponent): void
 {
-      return $number = pow($number, $exponent);
-}
+      $number = pow($number, $exponent);
+};
 
 echo calculator1($_inputNumber, $exponentValue).PHP_EOL;
 echo $_inputNumber.PHP_EOL;
