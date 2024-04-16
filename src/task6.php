@@ -17,13 +17,13 @@ function myFunc(int|float $a, int|float $b, ?closure $c = null): int|float
 
 
 
-$printArg = function (int|float $_a): void {
+$printResult = function (int|float $_a): void {
     echo $_a.PHP_EOL;
 
 };
 
 myFunc($value1, $value2).PHP_EOL;
-myFunc($value1, $value2, $printArg);
+myFunc($value1, $value2, $printResult);
 
 
 
