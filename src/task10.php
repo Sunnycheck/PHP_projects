@@ -5,7 +5,7 @@ $firstVal = 0;
 $secondVal = 1;
 $limit = 55;
 
-function fibo($a, $b, $limit): Generator
+function fibo(int $a, int $b, int $limit): Generator
 {
     while ($a < $limit) {
         yield $a;
