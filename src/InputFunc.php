@@ -33,8 +33,11 @@ function addData(array $line, string $path): void
 }
 
 addData($input, $path);
-function readData(string $file): string
+function readData(string $file): string|false
 {
+    if (!file_exists($file)){
+        return false;
+    }
     $opened = fopen($file, 'r');
     $read = file($file);
     $result = end($read);
