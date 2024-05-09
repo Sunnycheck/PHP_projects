@@ -41,7 +41,7 @@ class Rectangle extends Figure
         return $this->width;
     }
 
-    public function area($width, $height): float
+    public function area(float $width, float $height): float
     {
         // TODO: Implement area() method.
         return $width * $height;
@@ -56,7 +56,7 @@ class Rectangle extends Figure
 
     }
 
-    public function perimeter($width, $height): float
+    public function perimeter(float $width, float $height): float
     {
         // TODO: Implement perimeter() method.
         return 2 * ($width + $height);
