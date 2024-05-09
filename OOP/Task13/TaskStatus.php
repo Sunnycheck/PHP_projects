@@ -1,8 +1,8 @@
 <?php
 
-enum TaskStatus : string
+enum TaskStatus: string
 {
-case Uncompleted = "In progress";
-case Done = "Completed";
+case UNCOMLETED = "In progress";
+case DONE = "Completed";
 };
 

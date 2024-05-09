@@ -5,11 +5,14 @@ require_once "TaskStatus.php";
 
 
 try {
-    $task0 = new TaskList("test.txt");
-    $task0->addTask("do smth", 3);
-    //$task0->deleteTask("663b73597872b");
-    //print_r($task0->getTasks());
-//$task0->completeTask("663b73629745e");
+   // print_r(TaskStatus::cases());
+$task0 = new TaskList("test.txt");
+
+
+$task0->addTask("do smth123 else", 4,TaskStatus::UNCOMLETED);
+  // $task0->deleteTask("663d1b128c027");
+ // print_r($task0->getTasks());
+//$task0->completeTask("663d1b360d6ef",TaskStatus::DONE);
 } catch (Exception $error) {
     echo $error->getMessage() . PHP_EOL;
 }

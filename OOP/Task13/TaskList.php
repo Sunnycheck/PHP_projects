@@ -1,14 +1,16 @@
 <?php
 
+
 class TaskList
 {
     private string $filepath;
 
-    private TaskStatus $taskStatus;
 
     public function __construct(string $file)
     {
         $this->setFilepath($file);
+        //$this->setTaskStatus($taskStatus);
+
 
     }
 
@@ -27,7 +29,7 @@ class TaskList
         $this->filepath = $filepath;
     }
 
-    public function addTask(string $taskName, int $priority, $taskStatus = "In progress"): void
+    public function addTask(string $taskName, int $priority, TaskStatus $taskStatus): void
     {
         if (strlen($taskName) < 3) {
             throw new Exception("To short task");
@@ -39,7 +41,8 @@ class TaskList
             throw new Exception("Invalid priority value");
         }
         $taskId = uniqid();
-        file_put_contents($this->filepath, "$taskId~$taskName~$priority~$taskStatus\n", FILE_APPEND);
+
+        file_put_contents($this->filepath, "$taskId~$taskName~$priority~$taskStatus->value\n", FILE_APPEND);
     }
 
     public function deleteTask(string $taskId): void
@@ -70,13 +73,13 @@ class TaskList
         return $result;
     }
 
-    public function completeTask(string $taskId): void
+    public function completeTask(string $taskId, TaskStatus $taskStatus): void
     {
         $result = $this->fileToArray();
 
         foreach ($result as $key => $value) {
             if ($value[0] === $taskId) {
-                $result[$key][3] = "Completed";
+                $result[$key][3] = $taskStatus->value;
                 break;
             }
         }
@@ -88,7 +91,7 @@ class TaskList
 
     }
 
-    //Repeated code made into fileToArray
+    //Repeated code moved into fileToArray
     private function fileToArray(): array
     {
         $tasks = file($this->filepath);
