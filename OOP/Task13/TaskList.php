@@ -17,14 +17,13 @@ class TaskList
 
     public function setFilepath(string $filepath): void
     {
-        $file = pathinfo($filepath);
-        if (isset($file['extension'])) {
-            $extension = $file['extension'];
-            if ($extension !== 'txt') {
-                throw new Exception("Invalid file extension");
-            }
-
+        if(strlen(pathinfo($filepath, PATHINFO_FILENAME)) < 1){
+            throw new Exception("Invalid file name");
         }
+        if (pathinfo($filepath, PATHINFO_EXTENSION) !== 'txt'){
+            throw new Exception("Invalid file extension");
+        }
+
 
         $this->filepath = $filepath;
     }
