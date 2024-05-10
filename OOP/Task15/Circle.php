@@ -4,12 +4,12 @@
 class Circle extends Figure
 {
     private float $radius;
-    private float $pi;
+
 
     public function __construct(float $radius)
     {
         $this->setRadius($radius);
-        $this->pi = pi();
+
 
     }
 
@@ -33,27 +33,27 @@ class Circle extends Figure
         return $this->radius;
     }
 
-    public function area(float $radius, float $pi): float
+    public function area(): float
     {
 
         // TODO: Implement area() method.
-        return $this->pi * pow($radius, 2);
+        return pi() * pow($this->radius, 2);
     }
 
     public function getArea(): float
     {
-        return $this->area($this->radius, $this->pi);
+        return $this->area();
     }
 
-    public function perimeter(float $radius, float $pi): float
+    public function perimeter(): float
     {
         // TODO: Implement perimeter() method.
-        return 2 * $this->pi * $radius;
+        return 2 * pi() * $this->radius;
 
     }
 
     public function getPerimeter(): float
     {
-        return $this->perimeter($this->radius,$this->pi);
+        return $this->perimeter();
     }
 }
