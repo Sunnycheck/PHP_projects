@@ -4,7 +4,7 @@
 class myQuestionnaire
 
 {
-    //назва властивості - не у camelCase
+    //назва властивості - не у camelCase. невірні модифікатори доступу
     public string $Firstname;
     public string $Lastname;
     public string $region;
