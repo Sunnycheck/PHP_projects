@@ -1,10 +1,33 @@
 version: '3'
 
+networks:
+  app:
+    driver: bridge
+
 services:
   php:
     build: ./
     volumes:
-      - ./OOP/Task15/:/var/www/html
+      - ./OOP/Task16/:/var/www/html
     ports:
       - "8088:80"
+    networks:
+      - app
+    depends_on:
+      - mysql
+    links:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: noadmin
+      MYSQL_DATABASE: mydatabase
+    networks:
+      - app
+
 
