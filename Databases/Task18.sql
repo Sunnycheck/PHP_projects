@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS clients (
-                                       `id` INT UNSIGNED PRIMARY KEY  AUTO_INCREMENT,
-                                       `login` CHAR(100) UNIQUE NOT NULL,
+    `id` INT UNSIGNED PRIMARY KEY  AUTO_INCREMENT,
+    `login` CHAR(100) UNIQUE NOT NULL,
     `email`CHAR(255) UNIQUE NOT NULL,
     `password` CHAR(255) NOT NULL
     ) ENGINE = InnoDB CHAR SET utf8;
