@@ -84,6 +84,11 @@ DELETE
 FROM services
 WHERE quantity IS NULL;
 
+SELECT SUM(price)
+FROM services;
+SELECT AVG(price)
+FROM services;
+
 
 
 
