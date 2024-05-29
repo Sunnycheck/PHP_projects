@@ -2,32 +2,33 @@
 
 class CookieControl
 {
-    public static function setCookie(string $cookie, string $value): void
+    public static function setCookie(string $cookie, string $value, string $path, string $domain, bool $security): void
     {
-        setcookie($cookie, $value, time() + 3600, "/");
+        setcookie($cookie, $value, time() + 3600, $path, $domain, $security);
     }
 
-    public static function getCookie(string $cookie): string
+    public static function getCookie(string $cookie): ?string
     {
-        if (isset($_COOKIE[$cookie])) {
-            return $_COOKIE[$cookie];
-        }
+        return $_COOKIE[$cookie] ?? null;
 
 
-        exit;
     }
 
     public static function deleteCookie(string $cookie): void
     {
-        if (isset($_COOKIE[$cookie])) {
-            setCookie($cookie,'', time()-3600, '/');
+        if (!isset($_COOKIE[$cookie])) {
+            return;
+        } else {
+            setCookie($cookie, '', time() - 3600);
         }
+
+
     }
 
-    public static function isCookiesSet(string $cookie): void
+    public static function isCookiesSet(string $cookie): bool
     {
-        if(!isset($_COOKIE[$cookie])){
-            throw new Exception("Cookie - /$cookie/ - not set");
-        }
+        return isset($_COOKIE[$cookie]);
+
+
     }
 }
